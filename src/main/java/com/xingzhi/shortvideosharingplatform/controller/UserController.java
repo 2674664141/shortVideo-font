@@ -119,7 +119,7 @@ public class UserController {
         }
         User user = new User();
         user.setUserName(userInfo.getUserName());
-        user.setAvatar("http://localhost:3000/image/default-avatar.png");
+        user.setAvatar("http://localhost:8080/image/default-avatar.png");
         user.setGender(0);
         user.setPhoneVerified(1);
         user.setPhone(userInfo.getPhone());

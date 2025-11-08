@@ -54,8 +54,8 @@ public class WebMvcConfig extends WebMvcConfigurationSupport {
         log.info("开始进行静态资源映射...");
         // 处理静态资源的，比如这里是映射到resources下的image文件夹下的所有文件，也就是resources下的image文件夹下的所有文件都可以被访问
         // 如果要添加的话参照我的格式进行添加
-        registry.addResourceHandler("/image/**").addResourceLocations("classpath:/image/");
-        registry.addResourceHandler("/video/**").addResourceLocations("classpath:/video/");
+        registry.addResourceHandler("/image/**").addResourceLocations("file:D:/videoAndPic/image/");
+        registry.addResourceHandler("/video/**").addResourceLocations("file:D:/videoAndPic/video/");
     }
 
     @Override

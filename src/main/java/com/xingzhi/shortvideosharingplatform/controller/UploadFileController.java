@@ -70,7 +70,7 @@ public class UploadFileController {
             }
             outputStream.close();
             FileUtils.deleteFolder(file);
-            return Result.success("http://localhost:3000/" + merge.getMimeType() + "/" + targetFile.getName(), "合并文件成功");
+            return Result.success("http://localhost:8080/" + merge.getMimeType() + "/" + targetFile.getName(), "合并文件成功");
         } catch (Exception e) {
             e.printStackTrace();
             return Result.error(504, "合并失败，发生未知错误");
