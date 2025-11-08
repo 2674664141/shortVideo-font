@@ -1,0 +1,70 @@
+server:
+  # 服务端口
+  port: 8080
+
+# spring配置
+spring:
+  profiles:
+    # 开发模式
+    active: dev
+  main:
+    allow-circular-references: true
+  servlet:
+    # 设置文件上传大小限制
+    multipart:
+      enabled: true
+      max-file-size: 10MB
+      max-request-size: 10MB
+  devtools:
+    # 热部署
+    restart:
+      enabled: true
+#      additional-paths: resource/**
+#      exclude: src/**
+  datasource:
+    # mysql配置
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/Star_Vision?serverTimezone=Asia/Shanghai&useSSL=false&characterEncoding=utf-8&allowPublicKeyRetrieval=true
+    username: root
+    password: 18270741898zZ
+    type: com.alibaba.druid.pool.DruidDataSource
+  data:
+    # redis相关配置192.168.66.103
+    redis:
+      host: localhost
+      port: 6379
+      password:
+      database: 0 # 0号数据库
+      lettuce:
+        pool:
+          max-active: 8
+          max-idle: 8
+          max-wait: -1ms
+          min-idle: 0
+
+star-vision:
+  # 投稿的文件存放的位置，这里需要改成你们自己电脑上对应的位置
+  upload-directory: D:/videoAndPic
+
+
+# mybatis-plus配置
+mybatis-plus:
+  type-aliases-package: com.xingzhi.model
+  mapper-locations: classpath:mapper/*.xml
+  global-config:
+    db-config:
+      id-type: auto
+  configuration:
+    map-underscore-to-camel-case: true
+
+# jwt配置
+jwt:
+  # jwt签名加密时使用的秘钥
+  admin-secret-key: 5CEA7AFEC7449DFECEAD28ADBE021A5E
+  # jwt过期时间
+  admin-ttl: 720000000
+  # 前端传递过来的令牌名称
+  admin-token-name: Authorization
+  user-secret-key: 5CEA7AFEC7449DFECEAD28ADBE021A5E
+  user-ttl: 720000000
+  user-token-name: Authorization
